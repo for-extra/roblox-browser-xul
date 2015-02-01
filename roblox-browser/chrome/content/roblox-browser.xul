@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://roblox-browser/skin/main.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://roblox-browser/locale/roblox-browser.dtd">
+<xul:window title     ="&roblox-browser.title;"
+            xmlns:xul ="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            id        ="roblox-browser"
+            width     ="1280"
+            height    ="768">
+    <xul:script type="application/javascript"
+                src="chrome://roblox-browser/content/roblox-browser.js" />
+    <xul:hbox id="toolbar">
+        <xul:button id       ="back"
+					class    ="button"
+                    label    ="&roblox-browser.back;"
+                    oncommand="back();"
+                    disabled ="true" />
+        <xul:button id       ="forward"
+					class    ="button"
+                    label    ="&roblox-browser.forward;"
+                    oncommand="forward();"
+                    disabled ="true" />
+        <xul:textbox id      ="urlbar"
+                     value   =""
+                     flex    ="1"
+                     onchange="go();" />
+        <xul:button id       ="go"
+					class    ="button"
+                    label    ="&roblox-browser.go;"
+                    oncommand="go();" />
+    </xul:hbox>
+    <xul:browser flex="1"
+                 id  ="browser"
+                 src =""
+                 type="content-primary" />
+    <xul:statusbar>
+        <xul:statusbarpanel id   ="status"
+                            label=""
+                            crop ="end"
+                            flex ="1" />
+        <xul:progressmeter id    ="progress"
+                           mode  ="determined"
+                           value ="0%"
+                           style ="display: none" />
+        <xul:statusbarpanel id   ="security"
+                            label=""
+                            style="display: none" />
+    </xul:statusbar>
+</xul:window>
